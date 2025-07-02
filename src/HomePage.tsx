@@ -10,45 +10,7 @@ import linkedIn from "./assets/linkedin.png";
 import meduim from "./assets/medium.png";
 import NavBar from "./NavBar.tsx";
 import productManagement from "./assets/pm.png";
-import { TrendingUp } from "lucide-react";
-
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-
-export const description = "An area chart with gradient fill";
-
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-];
-
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--chart-5)",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
-  },
-} satisfies ChartConfig;
+import Chart from "./Charts";
 
 function MyRotatingBox(props) {
   const colorMap = useLoader(TextureLoader, sphereTexture);
@@ -117,11 +79,11 @@ export default function HomePage() {
       className="h-screen" >
         <NavBar />
         <div className="p-4 w-[100vw]">
-          <h1 className="text-4xl font-serif font-semibold">Julio Quintanilla</h1>
-          <p className="mt-2 text-2xl">Check out some of my projects:</p>
+          <h1 className="text-5xl font-bungee ">Julio Quintanilla</h1>
+          <p className="mt-2 text-4xl font-honk">Check out some of my projects:</p>
           <div className="flex w-[100vw] ">
           <div className="items-center ml-5">
-            <p className="text-lg mt-2">Quizar:</p>
+            <p className="text-3xl mt-4 font-honk">Quizar:</p>
             <Link
               to="https://quizapp-frontend-974768286444.us-central1.run.app/"
               target="_blank"
@@ -135,7 +97,7 @@ export default function HomePage() {
                 </Canvas>
               </div>
             </Link>
-            <p className="text-lg">Product Management:</p>
+            <p className="text-3xl font-honk">Product Management:</p>
             <Link
               to="https://quizapp-frontend-974768286444.us-central1.run.app/"
               target="_blank"
@@ -208,108 +170,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
             >
               
-              <div id="canvas-container" className="h-[5vh] w-[23vw] absolute right-8 mt-10">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>User Base:</CardTitle>
-                    <CardDescription>
-                      Showing total visitors for the last 6 months from my projects.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ChartContainer config={chartConfig}>
-                      <AreaChart
-                        accessibilityLayer
-                        data={chartData}
-                        margin={{
-                          left: 12,
-                          right: 12,
-                        }}
-                      >
-                        <CartesianGrid vertical={false} />
-                        <XAxis
-                          dataKey="month"
-                          tickLine={false}
-                          axisLine={false}
-                          tickMargin={8}
-                          tickFormatter={(value) => value.slice(0, 3)}
-                        />
-                        <ChartTooltip
-                          cursor={false}
-                          content={<ChartTooltipContent />}
-                        />
-                        <defs>
-                          <linearGradient
-                            id="fillDesktop"
-                            x1="0"
-                            y1="0"
-                            x2="0"
-                            y2="1"
-                          >
-                            <stop
-                              offset="5%"
-                              stopColor="var(--color-desktop)"
-                              stopOpacity={0.8}
-                            />
-                            <stop
-                              offset="95%"
-                              stopColor="var(--color-desktop)"
-                              stopOpacity={0.1}
-                            />
-                          </linearGradient>
-                          <linearGradient
-                            id="fillMobile"
-                            x1="0"
-                            y1="0"
-                            x2="0"
-                            y2="1"
-                          >
-                            <stop
-                              offset="5%"
-                              stopColor="var(--color-mobile)"
-                              stopOpacity={0.8}
-                            />
-                            <stop
-                              offset="95%"
-                              stopColor="var(--color-mobile)"
-                              stopOpacity={0.1}
-                            />
-                          </linearGradient>
-                        </defs>
-                        <Area
-                          dataKey="mobile"
-                          type="natural"
-                          fill="url(#fillMobile)"
-                          fillOpacity={0.4}
-                          stroke="var(--color-mobile)"
-                          stackId="a"
-                        />
-                        <Area
-                          dataKey="desktop"
-                          type="natural"
-                          fill="url(#fillDesktop)"
-                          fillOpacity={0.4}
-                          stroke="var(--color-desktop)"
-                          stackId="a"
-                        />
-                      </AreaChart>
-                    </ChartContainer>
-                  </CardContent>
-                  <CardFooter>
-                    <div className="flex w-full items-start gap-2 text-sm">
-                      <div className="grid gap-2">
-                        <div className="flex items-center gap-2 leading-none font-medium">
-                          Trending up by 5.2% this month{" "}
-                          <TrendingUp className="h-4 w-4" />
-                        </div>
-                        <div className="text-muted-foreground flex items-center gap-2 leading-none">
-                          January - June 2024
-                        </div>
-                      </div>
-                    </div>
-                  </CardFooter>
-                </Card>
-              </div>
+            <Chart />
             </Link>
           </div>
           </div>
