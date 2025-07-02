@@ -114,13 +114,13 @@ export default function HomePage() {
           backgroundImage: `url(${homePageBackground})`,
           backgroundSize: "cover",
         }}
-      >
+      className="h-screen" >
         <NavBar />
-        <div className="container mx-auto p-4 w-[100vw]">
-          <h1 className="text-4xl font-mono">Julio Quintanilla</h1>
+        <div className="p-4 w-[100vw]">
+          <h1 className="text-4xl font-serif font-semibold">Julio Quintanilla</h1>
           <p className="mt-2 text-2xl">Check out some of my projects:</p>
-          <div className="flex mx-auto w-[100vw]">
-          <div className="items-center mr-50">
+          <div className="flex w-[100vw] ">
+          <div className="items-center ml-5">
             <p className="text-lg mt-2">Quizar:</p>
             <Link
               to="https://quizapp-frontend-974768286444.us-central1.run.app/"
@@ -141,7 +141,6 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              
               <div id="canvas-container" className="h-40 w-[10vw]">
                 <Canvas>
                   <MyRotatingBox2 />
@@ -151,11 +150,11 @@ export default function HomePage() {
               </div>
             </Link>
             </div>
-            <div className="">
+            <div className="flex flex-col absolute items-center justify-center w-[100vw]">
           <img
             src={profilepic}
             alt="Profile"
-            className="w-full/2 h-[60vh] rounded-md mx-auto   shadow-xl shadow-cyan-500/50 mask-b-from-90% mask-b-to-95% shadow-cyan-500/50 opacity-85 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer "
+            className="w-full/2 h-[60vh] rounded-md  shadow-xl shadow-cyan-500/50 mask-b-from-90% mask-b-to-95% shadow-cyan-500/50 opacity-85 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 cursor-pointer "
           />
           <div className="flex items-center justify-center mb-20">
             <Link
@@ -209,12 +208,12 @@ export default function HomePage() {
               rel="noopener noreferrer"
             >
               
-              <div id="canvas-container" className="h-[5vh] w-[30vw] absolute right-5 ">
+              <div id="canvas-container" className="h-[5vh] w-[23vw] absolute right-8 mt-10">
                 <Card>
                   <CardHeader>
                     <CardTitle>User Base:</CardTitle>
                     <CardDescription>
-                      Showing total visitors for the last 6 months From My Projects
+                      Showing total visitors for the last 6 months from my projects.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
