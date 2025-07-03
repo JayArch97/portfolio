@@ -9,7 +9,7 @@ import homePageBackground from "./assets/8k_stars_milky_way.jpg";
 import linkedIn from "./assets/linkedin.png";
 import meduim from "./assets/medium.png";
 import NavBar from "./NavBar.tsx";
-import productManagement from "./assets/pm.png";
+import productManagement from "./assets/2k_mars.jpg";
 import Chart from "./Charts";
 
 function MyRotatingBox(props) {
@@ -61,7 +61,7 @@ function MyRotatingBox2(props) {
         castShadow
       />
       <mesh {...props} ref={meshRef} position={[0, 0, 0]} receiveShadow>
-        <boxGeometry args={[3, 3, 3]} />
+        <sphereGeometry args={[2, 32, 32]} />
         <meshBasicMaterial map={colorMap} />
       </mesh>
     </>
@@ -79,11 +79,11 @@ export default function HomePage() {
       className="h-screen" >
         <NavBar />
         <div className="p-4 w-[100vw]">
-          <h1 className="text-5xl font-bungee ">Julio Quintanilla</h1>
+          <h1 className="text-5xl opacity-90 font-bungee">Julio Quintanilla</h1>
           <p className="mt-2 text-4xl font-honk">Check out some of my projects:</p>
           <div className="flex w-[100vw] ">
           <div className="items-center ml-5">
-            <p className="text-3xl mt-4 font-honk">Quizar:</p>
+            <p className="text-lg mt-4 font-bungee">Quizar:</p>
             <Link
               to="https://quizapp-frontend-974768286444.us-central1.run.app/"
               target="_blank"
@@ -97,7 +97,7 @@ export default function HomePage() {
                 </Canvas>
               </div>
             </Link>
-            <p className="text-3xl font-honk">Product Management:</p>
+            <p className="text-lg font-bungee">Product Management:</p>
             <Link
               to="https://quizapp-frontend-974768286444.us-central1.run.app/"
               target="_blank"
