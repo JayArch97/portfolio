@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk:MORF@21&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -92,9 +92,15 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-honk: "Honk", system-ui;
   --font-bungee: "Bungee Spice", sans-serif;
+  --font-honk: "Honk", sans-serif;
 
+
+}
+
+.honk-white-shadow {
+  font-family: "Honk", system-ui;
+  text-shadow: 2px 4px 7px  #fff
 }
 
 .dark {

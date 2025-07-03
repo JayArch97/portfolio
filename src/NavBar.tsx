@@ -5,7 +5,7 @@ export default function NavBar(){
 
     return(
         <nav className="flex justify-center space-x-5 ">
-            <ul className="flex space-x-5 hover:cursor-pointer mt-3 font-semibold">
+            <ul className="flex space-x-5 hover:cursor-pointer mt-3 font-honk text-3xl ">
                 <Link to = '/home'>
                 <li>Home</li>
                 </Link>

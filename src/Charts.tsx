@@ -1,4 +1,4 @@
-add import { TrendingUp } from "lucide-react";
+ import { TrendingUp } from "lucide-react";
 
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import {
@@ -123,7 +123,7 @@ export default function Chart() {
                 <TrendingUp className="h-4 w-4" />
               </div>
               <div className="text-muted-foreground flex items-center gap-2 leading-none">
-                January - June 2024
+                January - June 2025
               </div>
             </div>
           </div>
